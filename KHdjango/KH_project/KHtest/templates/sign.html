@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>資料輸入</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'KHtest/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'KHtest/sign.css' %}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <form class="form-signin" method="POST" action="{% url 'sign' %}">
+        {% csrf_token %}
+        <h1 class="form-signin-heading">請輸入資料</h1>
+        <p>你是第 {{lendata | length}} 位訪客</p>
+        <table>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">id</label>
+          {{ Dataform.id }}
+        </div>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">name</label>
+          {{ Dataform.name }}
+        </div>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">age</label>
+          {{ Dataform.age }}
+        </div>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">marital</label>
+          {{ Dataform.marital }}
+        </div>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">education</label>
+          {{ Dataform.education }}
+        </div>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">balance</label>
+          {{ Dataform.balance }}
+        </div>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">housing</label>
+          {{ Dataform.housing }}
+        </div>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">loan</label>
+          {{ Dataform.loan }}
+        </div>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">duration</label>
+          {{ Dataform.duration }}
+        </div>
+        <tr style="line-height:45px;">
+          <td><h4><input type="submit" value="新增並預測結果"></h4></td>
+          <td>{{ new_comment }}</td>
+        </tr> 
+        <tr>
+          <td><a href="/KHtest/bank">返回客戶資料清單</a></td>
+        </tr>
+      </table>
+        <!--<h2 class="form-signin-heading">請輸入基本資料</h2>
+        <div class="form-group">
+          <label for="inputName" class="sr-only">Name</label>
+          {{ form.name }}
+        </div>
+        <div class="form-group">
+          <label for="comment" class="sr-only">Comment:</label>
+            {{ form.comment }}
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign</button>-->
+      </form>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

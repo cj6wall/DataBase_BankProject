@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>銀行客戶資料</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'KHtest/bootstrap.min.css' %}" rel="stylesheet"> 
+    <!-- Bootstrap theme -->
+    <link href="{% static 'KHtest/bootstrap-theme.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'KHtest/theme.css' %}" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <div class="container theme-showcase" role="main">
+
+      <div class="jumbotron">
+        <h1>歡迎來到KH銀行!</h1>
+        <h2>以下為預測結果!</h2>
+        <a type="button" class="btn btn-link" href="{% url 'sign' %}">回到輸入資料頁面</a>
+        <a type="button" class="btn btn-link" href="{% url 'bank' %}">回到客戶資料清單</a>
+        <!--注意要改href="sign.html變成href={% url 'sign' %}-->
+      </div>
+
+      <!--注意!data是view.py中的key值-->
+      <div class="page-header">
+        <h1>預測機率為：{{ Probility }} %</h1>
+        <h1>預測結果為：{{ Result }} </h1>
+        <h1>客戶輸入為：{{ Test }} </h1>
+        <!-- <h1>{{ Test }}</h1> -->
+      </div>
+      <div class="well">
+        <h1>{{ Word }}</h1>
+      </div>
+    </div> <!-- /container -->
+
+  </body>
+</html>

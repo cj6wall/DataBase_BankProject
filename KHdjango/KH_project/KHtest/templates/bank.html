@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+			a{ text-decoration:none;}
+			a:link {color:#4169e1;} 
+			a:visited {color:#4169e1;}
+			table{ border-collapse: collapse; background-color: #ffdead; }
+		</style>
+	</head>
+	<body>
+		<h1>KH銀行資料庫資料</h1>
+		<p>從Django資料庫抓取資料顯示在網頁上</p>
+		<p>目前總共有 {{bdata | length}} 筆資料</p>
+		<tr>
+          	<td><a href="/KHtest/index">返回預測結果</a></td>
+          	<td><a href="/KHtest/sign">返回輸入資料頁面</a></td>
+        </tr>
+		<table cellpadding="8" border="1">
+			<th>{{ id }}</th>
+			<th>{{ name }}</th>
+			<th>{{ age }}</th>
+			<th>{{ marital }}</th>
+			<th>{{ education }}</th>
+			<th>{{ balance }}</th>
+			<th>{{ housing }}</th>
+			<th>{{ loan }}</th>
+			<th>{{ duration }}</th>
+			<th>{{ y }}</th>
+		{% for n in bdata %}
+			<tr>
+				<td>{{ n.id }}</td>
+				<td>{{ n.name }}</td>
+				<td>{{ n.age }}</td>
+				<td>{{ n.marital }}</td>
+				<td>{{ n.education }}</td>
+				<td>{{ n.balance }}</td>
+				<td>{{ n.housing }}</td>
+				<td>{{ n.loan }}</td>
+				<td>{{ n.duration }}</td>
+				<td>{{ n.y }}</td>
+			</tr>
+		{% endfor %}
+		</table>
+	</body>
+</html>

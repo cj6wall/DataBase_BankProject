@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>新增資料</h1>
+		<form action="/do_insert/" method="POST">{% csrf_token %}
+			<table>
+				<tr>
+					<td>age</td>
+					<td><input type="text" name="age"></td>
+				</tr>	
+				<tr>
+					<td>job</td>
+					<td><input type="text" name="job"></td>
+				</tr>
+				<tr>
+					<td>marital</td>
+					<td><input type="text" name="marital"></td>
+				</tr>
+				<tr>
+					<td>education</td>
+					<td><input type="text" name="education"></td>
+				</tr>
+				<tr>
+					<td>default</td>
+					<td><input type="text" name="default"></td>	
+				</tr>
+				<tr>
+					<td>balance</td>
+					<td><input type="text" name="balance"></td>	
+				</tr>
+				<tr>
+					<td>housing</td>
+					<td><input type="text" name="housing"></td>
+				</tr>
+				<tr>
+					<td>loan</td>
+					<td><input type="text" name="loan"></td>
+				</tr>
+				<tr>
+					<td>contact</td>
+					<td><input type="text" name="contact"></td>
+				</tr>
+				<tr>
+					<td>day</td>
+					<td><input type="text" name="day"></td>
+				</tr>
+				<tr>
+					<td>month</td>
+					<td><input type="text" name="month"></td>
+				</tr>
+				<tr>
+					<td>duration</td>
+					<td><input type="text" name="duration"></td>
+				</tr>
+				<tr>
+					<td>campaign</td>
+					<td><input type="text" name="campaign"></td>
+				</tr>
+				<tr>
+					<td>pdays</td>
+					<td><input type="text" name="pdays"></td>
+				</tr>
+				<tr>
+					<td>previous</td>
+					<td><input type="text" name="previous"></td>
+				</tr>
+				<tr>
+					<td>poutcome</td>
+					<td><input type="text" name="poutcome"></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="新增"></td>
+				</tr>	
+				<tr>
+					<td><a href="/company">返回清單</a></td>
+				</tr>
+			</table>
+		</form>
+	</body>	
+</html>
